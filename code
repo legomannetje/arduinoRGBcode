@@ -1,0 +1,21 @@
+$(document).ready(function(){
+    $("input").change(function(){
+        $.post("http://192.168.0.9/led.html",
+        {
+		  value_led1: ($("#green").val()),
+		  value_led2: ($("#blue").val()),
+          value_led3: ($("#red").val()),
+		  
+        },
+		
+        function(data,status){
+            getReady();
+        });
+    });
+});
+
+function getReady(){
+			document.getElementById("val_red").innerHTML = ($("#red").val());
+			document.getElementById("val_green").innerHTML = ($("#green").val());
+			document.getElementById("val_blue").innerHTML = ($("#blue").val());
+			}
